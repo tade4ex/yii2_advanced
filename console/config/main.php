@@ -19,7 +19,10 @@ return [
         'fixture' => [
             'class' => 'yii\console\controllers\FixtureController',
             'namespace' => 'common\fixtures',
-          ],
+        ],
+        'greatingsController' => [
+            'class' => 'console\controllers\consoleGreatingsController'
+        ],
     ],
     'components' => [
         'log' => [

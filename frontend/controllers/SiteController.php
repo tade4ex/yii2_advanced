@@ -133,6 +133,11 @@ class SiteController extends Controller
         }
     }
 
+    public function actionHelloWorld()
+    {
+        return $this->render('hello-world');
+    }
+
     /**
      * Displays about page.
      *
