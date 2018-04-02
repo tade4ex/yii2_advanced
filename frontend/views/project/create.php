@@ -25,12 +25,3 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
-
-
-<div class="project-create">
-
-    <h1></h1>
-
-
-
-</div>

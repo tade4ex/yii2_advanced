@@ -2,9 +2,12 @@
 
 namespace frontend\controllers;
 
+use app\models\Task;
+use app\models\TaskContainer;
 use Yii;
 use app\models\Project;
 use yii\data\ActiveDataProvider;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -37,7 +40,7 @@ class ProjectController extends Controller
     {
         $userProjects = Project::findAll(['user_id' => Yii::$app->user->id]);
         return $this->render('index', [
-            'userProjects' => $userProjects
+            'userProjects' => $userProjects,
         ]);
     }
 
@@ -49,8 +52,22 @@ class ProjectController extends Controller
      */
     public function actionView($id)
     {
+        $userTaskContainers = TaskContainer::findAll(['user_id' => Yii::$app->user->id, 'project_id' => Yii::$app->request->get('id')]);
+        $projectUserTasks = Task::findAll(['user_id' => Yii::$app->user->id, 'project_id' => Yii::$app->request->get('id')]);
+        $projectUserTasksByContainer = [];
+        foreach ($projectUserTasks as $task) {
+            $task = $task->toArray();
+            if (empty($projectUserTasksByContainer[$task['id']])) {
+                $projectUserTasksByContainer[$task['id']] = [];
+            }
+            array_push($projectUserTasksByContainer[$task['id']], $task);
+        }
+
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'userTaskContainers' => $userTaskContainers,
+            'projectUserTasksByContainer' => $projectUserTasksByContainer,
         ]);
     }
 

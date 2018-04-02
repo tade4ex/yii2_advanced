@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $userProjects \app\models\Project */
 
 $this->title = Yii::t('app', 'Projects');
 $this->params['breadcrumbs'][] = $this->title;

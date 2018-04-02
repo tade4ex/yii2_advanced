@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\datetime\DateTimePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Task */
@@ -16,21 +17,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'user_id')->textInput() ?>
+    <?= $form->field($model, 'start')->widget(DateTimePicker::className(), [
+        'convertFormat' => true,
+        'pluginOptions' => [
+            'format' => 'y-m-d H:i',
+            'startDate' => date('Y-m-d H:i'),
+            'todayHighlight' => true
+        ],
+    ]) ?>
 
-    <?= $form->field($model, 'project_id')->textInput() ?>
-
-    <?= $form->field($model, 'task_container_id')->textInput() ?>
-
-    <?= $form->field($model, 'start')->textInput() ?>
-
-    <?= $form->field($model, 'end')->textInput() ?>
-
-    <?= $form->field($model, 'complete')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'update_at')->textInput() ?>
+    <?= $form->field($model, 'end')->widget(DateTimePicker::className(), [
+        'convertFormat' => true,
+        'pluginOptions' => [
+            'format' => 'y-m-d H:i',
+            'startDate' => date('Y-m-d H:i'),
+            'todayHighlight' => true
+        ],
+    ]) ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
