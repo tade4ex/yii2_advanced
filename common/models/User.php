@@ -17,6 +17,10 @@ use yii\web\IdentityInterface;
  * @property string $email
  * @property string $auth_key
  * @property integer $status
+ * @property string $name
+ * @property string $surname
+ * @property string $phone
+ * @property string $avatar_url
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
@@ -185,5 +189,13 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
+    }
+
+    public function beforeSave($insert)
+    {
+        if ($this->isNewRecord) {
+            $this->avatar_url = 'uploads/empty_avatar.png';
+        }
+        return parent::beforeSave($insert);
     }
 }

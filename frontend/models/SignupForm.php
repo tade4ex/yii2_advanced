@@ -1,6 +1,7 @@
 <?php
 namespace frontend\models;
 
+use Yii;
 use yii\base\Model;
 use common\models\User;
 
@@ -12,7 +13,10 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
-
+    public $name;
+    public $surname;
+    public $phone;
+    public $avatarUrl;
 
     /**
      * {@inheritdoc}
@@ -33,6 +37,24 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+
+            [['name', 'surname'], 'required'],
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function attributeLabels()
+    {
+        return [
+            'username' => Yii::t('app', 'Username'),
+            'email' => Yii::t('app', 'E-mail'),
+            'password' => Yii::t('app', 'Password'),
+            'name' => Yii::t('app', 'Name'),
+            'surname' => Yii::t('app', 'Surname'),
+            'phone' => Yii::t('app', 'Phone'),
+            'avatarUrl' => Yii::t('app', 'Avatar'),
         ];
     }
 
@@ -52,7 +74,10 @@ class SignupForm extends Model
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();
-        
+        $user->name = $this->name;
+        $user->surname = $this->surname;
+        $user->phone = $this->phone;
+
         return $user->save() ? $user : null;
     }
 }

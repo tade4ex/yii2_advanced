@@ -4,7 +4,7 @@ namespace console\controllers;
 
 use yii\console\Controller;
 
-class consoleGreatingsController extends Controller
+class ConsoleGreatingsController extends Controller
 {
     public function actionIndex()
     {

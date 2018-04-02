@@ -10,26 +10,39 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#"><b>GU</b> task tracker</a>
+    </div>
+    <div class="login-box-body">
+        <p class="login-box-msg"><?=Yii::t('app', 'Sign up')?></p>
 
-    <p>Please fill out the following fields to signup:</p>
+        <?php $form = ActiveForm::begin([
+            'id' => 'login-signup',
+            'enableClientValidation' => false,
+            'options' => ['enctype' => 'multipart/form-data'],
+        ]); ?>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'name'); ?>
 
-                <?= $form->field($model, 'email') ?>
+        <?= $form->field($model, 'surname'); ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'phone'); ?>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
-                </div>
+        <?= $form->field($model, 'email') ?>
 
-            <?php ActiveForm::end(); ?>
+        <?= $form->field($model, 'password')->passwordInput() ?>
+
+        <div class="row">
+            <div class="col-xs-4">
+                <?= Html::submitButton(Yii::t('app', 'Signup'), ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'signup-button']) ?>
+            </div>
+            <!-- /.col -->
         </div>
+
+
+        <?php ActiveForm::end(); ?>
     </div>
 </div>
