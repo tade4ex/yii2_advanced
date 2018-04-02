@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use app\models\Project;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -72,7 +73,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $userProjects = Project::findAll(['user_id' => Yii::$app->user->id]);
+        return $this->render('index', [
+            'userProjects' => $userProjects
+        ]);
     }
 
     /**

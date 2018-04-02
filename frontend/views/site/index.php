@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $userProjects \app\models\Project */
 
 use yii\helpers\Html;
 
@@ -17,21 +18,19 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-green">
-                <div class="inner">
-                    <h3>Project title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <p>10% complete</p>
+        <?php foreach ($userProjects as $project) : $project = $project->toArray(); ?>
+            <div class="col-lg-3 col-xs-6">
+                <div class="small-box bg-green">
+                    <div class="inner">
+                        <h3><?= $project['name'] ?></h3>
+                        <?php if (!empty($project['description'])) : ?>
+                            <p><?= $project['description'] ?></p>
+                        <?php endif; ?>
+                    </div>
+                    <div class="icon"><i class="ion ion-stats-bars"></i></div>
+                    <?= Html::a(Yii::t('app', 'View project') . ' <i class="fa fa-arrow-circle-right"></i>', ['project/view', 'id' => $project['id']], ['class' => 'small-box-footer']) ?>
                 </div>
-                <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" class="small-box-footer">
-                    More info <i class="fa fa-arrow-circle-right"></i>
-                </a>
             </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </div>

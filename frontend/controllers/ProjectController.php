@@ -35,12 +35,9 @@ class ProjectController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Project::find(),
-        ]);
-
+        $userProjects = Project::findAll(['user_id' => Yii::$app->user->id]);
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+            'userProjects' => $userProjects
         ]);
     }
 
