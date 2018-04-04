@@ -15,6 +15,9 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
+        'realplexor' => [
+            'class' => 'inpassor\realplexor\Realplexor',
+        ],
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,

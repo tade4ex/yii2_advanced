@@ -20,8 +20,8 @@ use kartik\datetime\DateTimePicker;
     <?= $form->field($model, 'start')->widget(DateTimePicker::className(), [
         'convertFormat' => true,
         'pluginOptions' => [
-            'format' => 'y-m-d H:i',
-            'startDate' => date('Y-m-d H:i'),
+            'format' => 'y-m-d H:i:s',
+            'startDate' => date('Y-m-d H:i:s'),
             'todayHighlight' => true
         ],
     ]) ?>
@@ -29,8 +29,8 @@ use kartik\datetime\DateTimePicker;
     <?= $form->field($model, 'end')->widget(DateTimePicker::className(), [
         'convertFormat' => true,
         'pluginOptions' => [
-            'format' => 'y-m-d H:i',
-            'startDate' => date('Y-m-d H:i'),
+            'format' => 'y-m-d H:i:s',
+            'startDate' => date('Y-m-d H:i:s'),
             'todayHighlight' => true
         ],
     ]) ?>

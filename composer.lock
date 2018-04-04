@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "00f1af185bee40a83554245d5336c995",
-    "content-hash": "e7f29cf92565603b48cbfea7fdc3b7f9",
+    "hash": "2da802ae62e5314d4fee907bab37c937",
+    "content-hash": "8d287635392fee936b2330cac8a8eb71",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -70,6 +70,39 @@
             "type": "bower-asset",
             "license": [
                 "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/inpassor-jquery-realplexor",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Inpassor/jquery-realplexor.git",
+                "reference": "05c97803dac7bc9814ae1399cee1f04b6f1915ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Inpassor/jquery-realplexor/zipball/05c97803dac7bc9814ae1399cee1f04b6f1915ef",
+                "reference": "05c97803dac7bc9814ae1399cee1f04b6f1915ef",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "jquery-realplexor.js"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Realplexor jQuery API",
+            "keywords": [
+                "dklab",
+                "jquery",
+                "realplexor"
             ]
         },
         {
@@ -639,6 +672,137 @@
                 "icon"
             ],
             "time": "2016-10-24 15:52:54"
+        },
+        {
+            "name": "inpassor/realplexor",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Inpassor/realplexor.git",
+                "reference": "1c373b27db88856a4677f65394d6755173602b78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Inpassor/realplexor/zipball/1c373b27db88856a4677f65394d6755173602b78",
+                "reference": "1c373b27db88856a4677f65394d6755173602b78",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "inpassor\\realplexor\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Inpassor",
+                    "email": "inpassor@yandex.com"
+                }
+            ],
+            "description": "Realplexor PHP API",
+            "keywords": [
+                "comet",
+                "dklab_realplexor",
+                "long",
+                "polling",
+                "realplexor"
+            ],
+            "time": "2016-10-20 09:35:18"
+        },
+        {
+            "name": "inpassor/yii2-assets",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Inpassor/yii2-assets.git",
+                "reference": "b7fb9aa75081ac176c8ea1a46c9a8775fed6c1cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Inpassor/yii2-assets/zipball/b7fb9aa75081ac176c8ea1a46c9a8775fed6c1cb",
+                "reference": "b7fb9aa75081ac176c8ea1a46c9a8775fed6c1cb",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "inpassor\\assets\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Inpassor",
+                    "email": "inpassor@yandex.com"
+                }
+            ],
+            "description": "Inpassor's bower packages assets for the Yii 2 framework",
+            "keywords": [
+                "assets",
+                "yii2"
+            ],
+            "time": "2017-02-07 08:53:30"
+        },
+        {
+            "name": "inpassor/yii2-realplexor",
+            "version": "0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Inpassor/yii2-realplexor.git",
+                "reference": "06b3f0e204ff4251fa6cea51fde4aed4ed36d407"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Inpassor/yii2-realplexor/zipball/06b3f0e204ff4251fa6cea51fde4aed4ed36d407",
+                "reference": "06b3f0e204ff4251fa6cea51fde4aed4ed36d407",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/inpassor-jquery-realplexor": "*",
+                "inpassor/realplexor": "*",
+                "inpassor/yii2-assets": "*",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "inpassor\\realplexor\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Inpassor",
+                    "email": "inpassor@yandex.com"
+                }
+            ],
+            "description": "Realplexor extension for the Yii 2 framework",
+            "keywords": [
+                "comet",
+                "dklab_realplexor",
+                "long",
+                "polling",
+                "realplexor",
+                "yii2"
+            ],
+            "time": "2017-02-07 08:48:10"
         },
         {
             "name": "kartik-v/yii2-krajee-base",

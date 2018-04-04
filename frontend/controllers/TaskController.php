@@ -67,7 +67,7 @@ class TaskController extends Controller
         $model = new Task();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['project/view', 'id' => Yii::$app->request->get('project_id')]);
         }
 
         return $this->render('create', [
