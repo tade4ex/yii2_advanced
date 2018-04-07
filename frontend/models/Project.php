@@ -36,7 +36,8 @@ class Project extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['description'], 'string'],
-            [['name'], 'string', 'max' => 255]
+            [['name'], 'string', 'max' => 255],
+            [['parent_id'], 'integer'],
         ];
     }
 
@@ -52,6 +53,7 @@ class Project extends \yii\db\ActiveRecord
             'user_id' => Yii::t('app', 'User ID'),
             'created_at' => Yii::t('app', 'Created At'),
             'update_at' => Yii::t('app', 'Update At'),
+            'parent_id' => Yii::t('app', 'Parent project'),
         ];
     }
 
@@ -89,6 +91,16 @@ class Project extends \yii\db\ActiveRecord
     public function getTaskContainers()
     {
         return $this->hasMany(TaskContainer::className(), ['project_id' => 'id']);
+    }
+
+    public function getParentProject()
+    {
+        return $this->hasOne(Project::className(), ['id' => 'parent_id']);
+    }
+
+    public function getChildProjects()
+    {
+        return $this->hasMany(Project::className(), ['parent_id' => 'id']);
     }
 
     /**

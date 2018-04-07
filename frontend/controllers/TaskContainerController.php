@@ -30,34 +30,6 @@ class TaskContainerController extends Controller
     }
 
     /**
-     * Lists all TaskContainer models.
-     * @return mixed
-     */
-    public function actionIndex()
-    {
-        $dataProvider = new ActiveDataProvider([
-            'query' => TaskContainer::find(),
-        ]);
-
-        return $this->render('index', [
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /**
-     * Displays a single TaskContainer model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
      * Creates a new TaskContainer model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
@@ -67,10 +39,10 @@ class TaskContainerController extends Controller
         $model = new TaskContainer();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['project/view', 'id' => Yii::$app->request->get('project_id')]);
+            return $this->redirect(['//project/view', 'id' => $model->project_id]);
         }
 
-        return $this->render('create', [
+        return $this->render('create_modal', [
             'model' => $model,
         ]);
     }
@@ -87,10 +59,10 @@ class TaskContainerController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['//project/view', 'id' => $model->project_id]);
         }
 
-        return $this->render('update', [
+        return $this->render('update_modal', [
             'model' => $model,
         ]);
     }

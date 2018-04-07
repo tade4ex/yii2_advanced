@@ -4,7 +4,6 @@ use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-
 if (Yii::$app->controller->action->id === 'login') {
 /**
  * Do not use this code in your template. Remove it. 
@@ -21,8 +20,8 @@ if (Yii::$app->controller->action->id === 'login') {
     );
 } else {
 
-    if (class_exists('backend\assets\AppAsset')) {
-        backend\assets\AppAsset::register($this);
+    if (class_exists('frontend\assets\AppAsset')) {
+        frontend\assets\AppAsset::register($this);
     } else {
         app\assets\AppAsset::register($this);
     }

@@ -67,3 +67,58 @@ Stack trace:
 #4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
 #5 /mnt/e/PHP" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
 2018/04/04 22:20:07 [error] 3644#3644: *236 FastCGI sent in stderr: " Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /signup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/07 11:53:28 [error] 2944#2944: *296 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function toArray() on null in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/views/layouts/main.php:32
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(336): require()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/mnt/e/PHP Stor...', Array)
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/mnt/e/PHP Stor...', Array, Object(frontend\controllers\SiteController))
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Arra" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /pjax-demo/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/07 11:53:28 [error] 2944#2944: *296 FastCGI sent in stderr: "y)
+#5 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /pjax-demo/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/07 12:08:36 [error] 2941#2941: *465 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot redeclare frontend\controllers\ProjectController::actionCreateModal() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/ProjectController.php on line 97" while reading response header from upstream, client: 127.0.0.1, server: advanced.test, request: "GET /project/create-modal HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/07 12:08:53 [error] 2941#2941: *465 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot redeclare frontend\controllers\ProjectController::actionCreateModal() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/ProjectController.php on line 97" while reading response header from upstream, client: 127.0.0.1, server: advanced.test, request: "GET /project/create HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/07 12:08:56 [error] 2941#2941: *465 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot redeclare frontend\controllers\ProjectController::actionCreateModal() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/ProjectController.php on line 97" while reading response header from upstream, client: 127.0.0.1, server: advanced.test, request: "GET /project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/07 12:09:00 [error] 2941#2941: *465 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot redeclare frontend\controllers\ProjectController::actionCreateModal() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/ProjectController.php on line 97" while reading response header from upstream, client: 127.0.0.1, server: advanced.test, request: "GET /project/create HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test", referrer: "http://advanced.test/"
+2018/04/07 12:13:44 [error] 2941#2941: *493 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/SiteController.php on line 81. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/SiteController.php on li" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/?id=test HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/07 12:13:48 [error] 2941#2941: *493 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/SiteController.php on line 81. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/SiteController.php on li" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/?id=test HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/07 12:13:52 [error] 2941#2941: *493 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/SiteController.php on line 81. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/SiteController.php on li" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/?id=test HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/07 12:14:07 [error] 2941#2941: *493 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/SiteController.php on line 81. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/SiteController.php on li" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/?id=test HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/07 12:48:06 [error] 2944#2944: *810 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: advanced.test, request: "GET /debug/default/toolbar?tag=5ac8a1e19589c HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test", referrer: "http://advanced.test/project/index"

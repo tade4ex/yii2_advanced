@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use app\models\Project;
+use frontend\assets\PjaxDemoAsset;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -13,6 +14,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\web\View;
 
 /**
  * Site controller
@@ -74,8 +76,28 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $userProjects = Project::findAll(['user_id' => Yii::$app->user->id]);
+        $isCreateProjectModal = Yii::$app->request->get('create-project-modal');
+
+        $view = new View();
+
+        $createProjectModal = (isset($isCreateProjectModal))
+            ? $view->render('//project/create_modal', [
+                'model' => new Project()
+            ])
+            : '';
         return $this->render('index', [
-            'userProjects' => $userProjects
+            'userProjects' => $userProjects,
+            'createProjectModal' => $createProjectModal,
+        ]);
+    }
+
+    public function actionCreateProjectModal()
+    {
+        $test = 'test';
+        $userProjects = Project::findAll(['user_id' => Yii::$app->user->id]);
+        return $this->render('index', [
+            'userProjects' => $userProjects,
+            'projectModal' => $test,
         ]);
     }
 

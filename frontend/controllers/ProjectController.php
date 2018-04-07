@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use app\models\Task;
 use app\models\TaskContainer;
+use frontend\components\Modal;
 use Yii;
 use app\models\Project;
 use yii\data\ActiveDataProvider;
@@ -11,6 +12,7 @@ use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\View;
 
 /**
  * ProjectController implements the CRUD actions for Project model.
@@ -44,6 +46,11 @@ class ProjectController extends Controller
         ]);
     }
 
+    public function actionTest()
+    {
+        return $this->render('create_modal', []);
+    }
+
     /**
      * Displays a single Project model.
      * @param integer $id
@@ -63,11 +70,35 @@ class ProjectController extends Controller
             array_push($projectUserTasksByContainer[$task['id']], $task);
         }
 
+        $model = $this->findModel($id);
+        $modelProjectParent = $model->getParentProject();
+        $modelProjectChild = $model->getChildProjects();
+
+        $updateProjectModal = Modal::renderModal('update-project-modal', '//project/update_modal', [
+            'model' => $model
+        ]);
+        $createContainerModal = Modal::renderModal('create-container-modal', '//task-container/create_modal', [
+            'model' => new TaskContainer()
+        ]);
+        $updateContainerModal = Modal::renderModal('update-container-modal', '//task-container/update_modal', [
+            'model' => TaskContainer::findOne(['id' => Yii::$app->request->get('task_container_id')])
+        ]);
+        $createTaskModal = Modal::renderModal('create-task-modal', '//task/create_modal', [
+            'model' => new Task()
+        ]);;
 
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'modelProjectParent' => $modelProjectParent,
+            'modelProjectChild' => $modelProjectChild,
             'userTaskContainers' => $userTaskContainers,
             'projectUserTasksByContainer' => $projectUserTasksByContainer,
+            'parentProject' => $modelProjectParent->one(),
+            'childProjects' => $modelProjectChild->all(),
+            'updateProjectModal' => $updateProjectModal,
+            'createContainerModal' => $createContainerModal,
+            'updateContainerModal' => $updateContainerModal,
+            'createTaskModal' => $createTaskModal,
         ]);
     }
 
@@ -81,7 +112,7 @@ class ProjectController extends Controller
         $model = new Project();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['//site/index']);
         }
 
         return $this->render('create', [
@@ -120,7 +151,7 @@ class ProjectController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['//site/index']);
     }
 
     /**
@@ -137,5 +168,14 @@ class ProjectController extends Controller
         }
 
         throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+    }
+
+    public function actionTime()
+    {
+        return $this->render('time-date', ['response' => date('H:i:s')]);
+    }
+    public function actionDate()
+    {
+        return $this->render('time-date', ['response' => date('d.m.Y')]);
     }
 }

@@ -42,6 +42,8 @@ class Task extends \yii\db\ActiveRecord
             [['name', 'start', 'end'], 'required'],
             [['description'], 'string'],
             [['name'], 'string', 'max' => 255],
+            [['start', 'end'], 'datetime'],
+            [['project_id', 'task_container_id'], 'integer'],
         ];
     }
 
@@ -102,8 +104,6 @@ class Task extends \yii\db\ActiveRecord
     {
         if ($this->isNewRecord) {
             $this->user_id = Yii::$app->user->id;
-            $this->project_id = Yii::$app->request->get('project_id');
-            $this->task_container_id = Yii::$app->request->get('task_container_id');
             $this->created_at = date('Y-m-d H:i:s');
             $this->update_at = date('Y-m-d H:i:s');
         } else {
