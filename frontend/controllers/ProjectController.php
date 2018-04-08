@@ -62,12 +62,16 @@ class ProjectController extends Controller
         $userTaskContainers = TaskContainer::findAll(['user_id' => Yii::$app->user->id, 'project_id' => Yii::$app->request->get('id')]);
         $projectUserTasks = Task::findAll(['user_id' => Yii::$app->user->id, 'project_id' => Yii::$app->request->get('id')]);
         $projectUserTasksByContainer = [];
+
+        $taskCount = count($projectUserTasks) - 1;
+        $taskCompleteCount = 0;
+
         foreach ($projectUserTasks as $task) {
-            $task = $task->toArray();
-            if (empty($projectUserTasksByContainer[$task['id']])) {
-                $projectUserTasksByContainer[$task['id']] = [];
+            if (empty($projectUserTasksByContainer[$task->id])) {
+                $projectUserTasksByContainer[$task->id] = [];
             }
-            array_push($projectUserTasksByContainer[$task['id']], $task);
+            if ($task->complete) $taskCompleteCount++;
+            array_push($projectUserTasksByContainer[$task->id], $task);
         }
 
         $model = $this->findModel($id);
@@ -99,7 +103,17 @@ class ProjectController extends Controller
             'createContainerModal' => $createContainerModal,
             'updateContainerModal' => $updateContainerModal,
             'createTaskModal' => $createTaskModal,
+            'taskCount' => $taskCount,
+            'taskCompleteCount' => $taskCompleteCount,
         ]);
+    }
+
+    public function actionCompleteTask()
+    {
+        $model = Task::findOne(['id' => Yii::$app->request->get('id')]);
+        $model->complete = 1;
+        $model->save();
+        return $this->redirect(['//project/view', 'id' => Yii::$app->request->get('project_id')]);
     }
 
     /**

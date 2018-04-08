@@ -42,6 +42,10 @@ EOF;
             <div class="box-header">
                 <h3 class="box-title"><?= Yii::t('app', 'Project') ?>: <?= Html::encode($this->title) ?></h3>
                 <p><?= $model->description ?></p>
+                <p><?= Yii::t('app', 'Task count ({taskCount}), complete ({taskCompleteCount})', [
+                    'taskCount' => $taskCount,
+                    'taskCompleteCount' => $taskCompleteCount,
+                ]) ?></p>
             </div>
             <div class="box-body">
                 <?php Pjax::begin() ?>
@@ -126,12 +130,18 @@ EOF;
                     <div class="box-body">
                         <?php if (!empty($projectUserTasksByContainer[$taskContainer['id']])) : ?>
                             <?php foreach ($projectUserTasksByContainer[$taskContainer['id']] as $task) : ?>
-                                <div class="callout callout-info">
-                                    <h4><?= $task['name']; ?></h4>
-                                    <p><?= $task['description']; ?></p>
+                                <div class="callout callout-<?= ($task->complete ? 'success' : 'info') ?>">
+                                    <h4><?= $task->name ?></h4>
+                                    <p><?= $task->description ?></p>
+                                    <?php if (!$task->complete) : ?>
                                     <p>
-                                        <i><?= Yii::t('app', 'from') ?> <?= $task['start']; ?></i>,<br> <?= Yii::t('app', 'to') ?>
-                                        <i><?= $task['end']; ?></i></p>
+                                        <?= Html::a(Yii::t('app', 'complete task'), ['//task/complete', 'id' => $task->id, 'project_id' => $task->project_id], ['class' => 'btn-sm btn-success']) ?>
+                                    </p>
+                                    <?php endif ?>
+                                    <p>
+                                        <i><?= Yii::t('app', 'from') ?> <?= $task->start; ?></i>,<br> <?= Yii::t('app', 'to') ?>
+                                        <i><?= $task->end; ?></i>
+                                    </p>
                                 </div>
                             <?php endforeach; ?>
                         <?php endif; ?>

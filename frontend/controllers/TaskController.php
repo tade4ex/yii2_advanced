@@ -75,6 +75,14 @@ class TaskController extends Controller
         ]);
     }
 
+    public function actionComplete($id, $project_id)
+    {
+        $model = $this->findModel($id);
+        $model->complete = true;
+        $model->update(true, ['complete']);
+        return $this->redirect(['//project/view', 'id' => $project_id]);
+    }
+
     /**
      * Updates an existing Task model.
      * If update is successful, the browser will be redirected to the 'view' page.
