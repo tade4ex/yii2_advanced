@@ -164,3 +164,188 @@ Stack trace:
 2018/04/15 11:54:46 [error] 338#338: *64 FastCGI sent in stderr: "')
 #4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
 #5 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/singup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:05:52 [error] 730#730: *1 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function toArray() on null in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/views/layouts/main.php:32
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(336): require()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/mnt/e/PHP Stor...', Array)
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/mnt/e/PHP Stor...', Array, Object(frontend\controllers\SiteController))
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#5 /mnt/e/PHP Storm P" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /v1/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:05:52 [error] 730#730: *1 FastCGI sent in stderr: "rojects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /v1/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:05:59 [error] 730#730: *3 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function toArray() on null in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/views/layouts/main.php:32
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(336): require()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/mnt/e/PHP Stor...', Array)
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/mnt/e/PHP Stor...', Array, Object(frontend\controllers\SiteController))
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#5 /m" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:05:59 [error] 730#730: *3 FastCGI sent in stderr: "nt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:06:10 [error] 730#730: *5 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function toArray() on null in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/views/layouts/main.php:32
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(336): require()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/mnt/e/PHP Stor...', Array)
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/mnt/e/PHP Stor...', Array, Object(frontend\controllers\SiteController))
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#5 /m" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:06:10 [error] 730#730: *5 FastCGI sent in stderr: "nt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:07:22 [error] 823#823: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  array_merge(): Argument #3 is not an array in /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/config/main.php on line 7
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php on line 122" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:07:41 [error] 823#823: *3 FastCGI sent in stderr: "PHP message: PHP Warning:  array_merge(): Argument #3 is not an array in /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/config/main.php on line 7
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php on line 122" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:07:58 [error] 823#823: *5 FastCGI sent in stderr: "PHP message: PHP Warning:  array_merge(): Argument #3 is not an array in /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/config/main.php on line 7
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php on line 122" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:07:59 [error] 823#823: *5 FastCGI sent in stderr: "PHP message: PHP Warning:  array_merge(): Argument #3 is not an array in /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/config/main.php on line 7
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php on line 122" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test", referrer: "http://api.test/"
+2018/04/15 17:08:16 [error] 823#823: *5 FastCGI sent in stderr: "PHP message: PHP Warning:  array_merge(): Argument #3 is not an array in /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/config/main.php on line 7
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php on line 122" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:08:48 [error] 823#823: *5 FastCGI sent in stderr: "PHP message: PHP Warning:  array_merge(): Argument #3 is not an array in /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/config/main.php on line 7
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php on line 122" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET /v1/test HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:08:52 [error] 823#823: *5 FastCGI sent in stderr: "PHP message: PHP Warning:  array_merge(): Argument #3 is not an array in /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/config/main.php on line 7
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php on line 122" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:08:55 [error] 823#823: *5 FastCGI sent in stderr: "PHP message: PHP Warning:  array_merge(): Argument #3 is not an array in /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/config/main.php on line 7
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php on line 122" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:18:25 [error] 823#823: *33 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function toArray() on null in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/views/layouts/main.php:32
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(336): require()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/mnt/e/PHP Stor...', Array)
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/mnt/e/PHP Stor...', Array, Object(frontend\controllers\SiteController))
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#5 /m" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:18:25 [error] 823#823: *33 FastCGI sent in stderr: "nt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:18:36 [error] 823#823: *35 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function toArray() on null in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/views/layouts/main.php:32
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(336): require()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/mnt/e/PHP Stor...', Array)
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/mnt/e/PHP Stor...', Array, Object(frontend\controllers\SiteController))
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#5 /mnt/e/PHP Storm P" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /api HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:18:36 [error] 823#823: *35 FastCGI sent in stderr: "rojects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /api HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:18:54 [error] 823#823: *37 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function toArray() on null in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/views/layouts/main.php:32
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(336): require()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/mnt/e/PHP Stor...', Array)
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/mnt/e/PHP Stor...', Array, Object(frontend\controllers\SiteController))
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Arra" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /api/v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:18:54 [error] 823#823: *37 FastCGI sent in stderr: "y)
+#5 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /api/v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 17:23:35 [error] 886#886: *1 directory index of "/mnt/e/PHP Storm Projects/GU/yii2-advanced/" is forbidden, client: 127.0.0.1, server: tade4ex.test, request: "GET / HTTP/1.1", host: "tade4ex.test"
+2018/04/15 17:23:41 [error] 886#886: *1 directory index of "/mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/" is forbidden, client: 127.0.0.1, server: tade4ex.test, request: "GET /frontend/ HTTP/1.1", host: "tade4ex.test"
+2018/04/15 17:26:30 [error] 886#886: *5 directory index of "/mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/" is forbidden, client: 127.0.0.1, server: tade4ex.test, request: "GET /frontend/ HTTP/1.1", host: "tade4ex.test"
+2018/04/15 17:26:32 [error] 886#886: *5 directory index of "/mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/" is forbidden, client: 127.0.0.1, server: tade4ex.test, request: "GET /frontend/ HTTP/1.1", host: "tade4ex.test"
+2018/04/15 17:29:02 [error] 961#961: *5 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Yii' not found in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php:197
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/web/index.php(14): yii\base\Application->__construct(Array)
+#1 {main}
+  thrown in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php on line 197" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:29:03 [error] 961#961: *7 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Yii' not found in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php:197
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/web/index.php(14): yii\base\Application->__construct(Array)
+#1 {main}
+  thrown in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php on line 197" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:29:03 [error] 961#961: *9 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Yii' not found in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php:197
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/web/index.php(14): yii\base\Application->__construct(Array)
+#1 {main}
+  thrown in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php on line 197" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:29:03 [error] 961#961: *11 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'Yii' not found in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php:197
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/web/index.php(14): yii\base\Application->__construct(Array)
+#1 {main}
+  thrown in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php on line 197" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET /v1/project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:43:21 [error] 350#350: *10 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "site/error". in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\web\NotFoundHttpException: Page not found. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Request.php:284
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:43:24 [error] 350#350: *37 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "site/error". in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\web\NotFoundHttpException: Page not found. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Request.php:284
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET /project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:43:30 [error] 350#350: *39 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "site/error". in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\web\NotFoundHttpException: Page not found. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Request.php:284
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET /project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:43:50 [error] 350#350: *10 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "site/error". in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\web\NotFoundHttpException: Page not found. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Request.php:284
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 17:46:44 [error] 349#349: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  Invalid argument supplied for foreach() in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php on line 122
+PHP message: PHP Fatal error:  Uncaught yii\base\InvalidConfigException: The "id" configuration for the Application is required. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php:220
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php(202): yii\base\Application->preInit(Array)
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/web/index.php(17): yii\base\Application->__construct(Array)
+#2 {main}
+  thrown in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Application.php on line 220" while reading response header from upstream, client: 127.0.0.1, server: api.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 18:00:15 [error] 349#349: *40 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\UnknownClassException: Unable to find 'api\controllers\SiteController' in file: /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/controllers/SiteController.php. Namespace missing? in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('api\\controllers...')
+#1 [internal function]: spl_autoload_call('api\\controllers...')
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(637): class_exists('api\\controllers...')
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#5 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#6 /mnt/e/PHP Storm" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET /project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 18:02:16 [error] 349#349: *42 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\UnknownClassException: Unable to find 'api\controllers\SiteController' in file: /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/controllers/SiteController.php. Namespace missing? in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('api\\controllers...')
+#1 [internal function]: spl_autoload_call('api\\controllers...')
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(637): class_exists('api\\controllers...')
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#5 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#6 /mnt/e/PHP Storm" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 18:02:21 [error] 349#349: *42 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\UnknownClassException: Unable to find 'api\controllers\SiteController' in file: /mnt/e/PHP Storm Projects/GU/yii2-advanced/api/controllers/SiteController.php. Namespace missing? in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('api\\controllers...')
+#1 [internal function]: spl_autoload_call('api\\controllers...')
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(637): class_exists('api\\controllers...')
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#5 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#6 /mnt/e/PHP Storm" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET /project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
