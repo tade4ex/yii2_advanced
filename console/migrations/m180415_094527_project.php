@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m180402_130211_project
+ * Class m180415_094527_project
  */
-class m180402_130211_project extends Migration
+class m180415_094527_project extends Migration
 {
     public function up()
     {
@@ -17,21 +17,17 @@ class m180402_130211_project extends Migration
 
         $this->createTable('project', [
             'id' => $this->primaryKey(),
+            'parent_id' => $this->integer()->defaultValue(null),
             'name' => $this->string()->notNull(),
             'description' => $this->text(),
             'user_id' => $this->integer()->notNull(),
-            'created_at' => $this->dateTime()->notNull(),
-            'update_at' => $this->dateTime()->notNull(),
+            'created_at' => $this->dateTime(),
+            'updated_at' => $this->dateTime(),
         ], $tableOptions);
-
-        $this->createIndex('idx-project-user_id', 'project', 'user_id');
-
-        $this->addForeignKey('fk-project-user_id', 'project', 'user_id', 'user', 'id');
     }
 
     public function down()
     {
-        $this->dropForeignKey('fk-project-user_id', 'project');
         $this->dropTable('project');
     }
 }

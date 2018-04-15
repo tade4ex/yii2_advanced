@@ -29,7 +29,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['index', 'login', 'logout', 'signup'],
+                'only' => ['index', 'subscribe', 'login', 'logout', 'signup'],
                 'rules' => [
                     [
                         'actions' => ['login', 'signup'],
@@ -37,7 +37,7 @@ class SiteController extends Controller
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['index', 'logout'],
+                        'actions' => ['index', 'logout', 'subscribe'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -75,20 +75,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $userProjects = Project::findAll(['user_id' => Yii::$app->user->id]);
-        $isCreateProjectModal = Yii::$app->request->get('create-project-modal');
-
-        $view = new View();
-
-        $createProjectModal = (isset($isCreateProjectModal))
-            ? $view->render('//project/create_modal', [
-                'model' => new Project()
-            ])
-            : '';
+        $projects = Project::findAll(['user_id' => Yii::$app->user->id]);
         return $this->render('index', [
-            'userProjects' => $userProjects,
-            'createProjectModal' => $createProjectModal,
+            'projects' => $projects,
         ]);
+    }
+
+    public function actionSubscribe()
+    {
+        return $this->render('subscribe');
     }
 
     public function actionCreateProjectModal()

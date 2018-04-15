@@ -60,27 +60,21 @@ class TaskController extends Controller
     /**
      * Creates a new Task model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     * @param $id
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id)
     {
         $model = new Task();
+        $model->project_id = $id;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['//project/view', 'id' => $model->project_id]);
+            return $this->redirect(['/project/view', 'id' => $id]);
         }
 
-        return $this->render('create_modal', [
+        return $this->render('create', [
             'model' => $model,
         ]);
-    }
-
-    public function actionComplete($id, $project_id)
-    {
-        $model = $this->findModel($id);
-        $model->complete = true;
-        $model->update(true, ['complete']);
-        return $this->redirect(['//project/view', 'id' => $project_id]);
     }
 
     /**
@@ -95,7 +89,7 @@ class TaskController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['/project/view', 'id' => $model->project_id]);
         }
 
         return $this->render('update', [

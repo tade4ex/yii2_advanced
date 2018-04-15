@@ -132,3 +132,35 @@ yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Pr
 2018/04/08 17:34:49 [error] 828#828: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: advanced.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
 2018/04/08 17:35:13 [error] 828#828: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: advanced.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
 2018/04/08 17:37:22 [error] 930#930: *4 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: advanced.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/11 22:41:40 [error] 514#514: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: advanced.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 11:42:40 [error] 334#334: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 127.0.0.1, server: advanced.test, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 11:54:18 [error] 338#338: *64 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function toArray() on null in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/views/layouts/main.php:32
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(336): require()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/mnt/e/PHP Stor...', Array)
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/mnt/e/PHP Stor...', Array, Object(frontend\controllers\SiteController))
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advan" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/singup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 11:54:18 [error] 338#338: *64 FastCGI sent in stderr: "ced/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#5 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/singup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 11:54:20 [error] 338#338: *64 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function toArray() on null in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/views/layouts/main.php:32
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(336): require()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/mnt/e/PHP Stor...', Array)
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/mnt/e/PHP Stor...', Array, Object(frontend\controllers\SiteController))
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advan" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/singup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 11:54:20 [error] 338#338: *64 FastCGI sent in stderr: "ced/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#5 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/singup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 11:54:46 [error] 338#338: *64 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function toArray() on null in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/views/layouts/main.php:32
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(336): require()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/mnt/e/PHP Stor...', Array)
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/mnt/e/PHP Stor...', Array, Object(frontend\controllers\SiteController))
+#3 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/singup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/15 11:54:46 [error] 338#338: *64 FastCGI sent in stderr: "')
+#4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#5 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\w" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/singup HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"

@@ -8,7 +8,8 @@
                 'items' => [
                     ['label' => Yii::t('app', 'Menu'), 'options' => ['class' => 'header']],
                     ['label' => Yii::t('app', 'Dashboard'), 'url' => ['/site/index']],
-                    ['label' => Yii::t('app', 'Add Project'), 'url' => ['/project/create']],
+                    ['label' => Yii::t('app', 'Subscribe info'), 'url' => ['/site/subscribe']],
+//                    ['label' => Yii::t('app', 'Add Project'), 'url' => ['/project/create']],
                 ],
             ]
         ) ?>
