@@ -101,10 +101,11 @@ class Project extends \yii\db\ActiveRecord
      */
     public function getParentsToSelect()
     {
+        $project = Project::find()->andWhere(['user_id' => Yii::$app->user->id]);
         if (!empty($this->id)) {
-            return Project::find()->andWhere(['!=', 'id', $this->id]);
+            return $project->andWhere(['!=', 'id', $this->id]);
         }
-        return Project::find();
+        return $project;
     }
 
     public function getChildProjects()

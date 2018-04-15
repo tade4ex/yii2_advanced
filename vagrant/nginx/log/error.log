@@ -349,3 +349,26 @@ Stack trace:
 #4 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
 #5 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
 #6 /mnt/e/PHP Storm" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET /project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 18:22:51 [error] 349#349: *144 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "site/error". in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\base\InvalidRouteException: Unable to resolve the request: project/1 in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('1', Array)
+#1 /mnt/e/PHP Storm Projects/GU/yii2-adv" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET /project/1 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/15 18:34:55 [error] 353#353: *174 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "site/error". in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\UnauthorizedHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\UnauthorizedHttpException))
+#3 {main}
+Previous exception:
+yii\web\UnauthorizedHttpException: Your request was made with invalid credentials. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:93
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(76): yii\filters\auth\AuthMethod->handleFailure(Obje" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET /project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
