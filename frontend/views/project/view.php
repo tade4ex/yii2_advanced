@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\Pjax;
 use yii\bootstrap\Modal;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Project */
@@ -33,6 +34,10 @@ $(document).ready(function() {
 <?php Pjax::end() ?>
 <?php Modal::end() ?>
 
+
+<?php $tasksComplete = ArrayHelper::getColumn($tasks, function ($task) { return $task->complete; }) ?>
+<?php $tasksCompleteCount = count(ArrayHelper::removeValue($tasksComplete, 1)) ?>
+
 <?= Html::beginTag('div', ['class' => 'content project-view']) ?>
 <?= Html::beginTag('div', ['class' => 'row']) ?>
 <?= Html::beginTag('div', ['class' => 'col-md-12 box']) ?>
@@ -42,7 +47,7 @@ $(document).ready(function() {
 <?= Html::tag('p', $model->description, []) ?>
 <?= Html::tag('p', Yii::t('app', 'Task count ({taskCount}), complete ({taskCompleteCount})', [
     'taskCount' => count($tasks),
-    'taskCompleteCount' => 0,
+    'taskCompleteCount' => $tasksCompleteCount,
 ]), []
 ) ?>
 <?= Html::endTag('div') ?>
@@ -110,34 +115,10 @@ $(document).ready(function() {
 <?= Html::endTag('div') ?>
 <?php if (!empty($tasks)) : ?>
     <?= Html::beginTag('div', ['class' => 'row']) ?>
-    <?php foreach ($tasks as $task) : /* @var $task \app\models\Task */ ?>
-        <?= Html::beginTag('div', ['class' => 'col-md-4']) ?>
-        <?= Html::beginTag('div', ['class' => 'box box-primary']) ?>
-        <?= Html::beginTag('div', ['class' => 'box-header']) ?>
-        <?= Html::tag('h3', ' ', []) ?>
-        <?= Html::beginTag('div', ['class' => 'box-tools pull-right']) ?>
-        <?= Html::a(Yii::t('app', 'Complete task'), ['/task/complete', 'id' => $task->id], ['class' => 'btn-sm btn-primary index-modal-link']) ?>
-        <?= Html::a(Yii::t('app', 'Update task'), ['/task/update', 'id' => $task->id], ['class' => 'btn-sm btn-success index-modal-link']) ?>
-        <?= Html::a(Yii::t('app', 'Delete task'), ['/task/delete', 'id' => $task->id], ['class' => 'btn-sm btn-danger index-modal-link']) ?>
-        <?= Html::endTag('div') ?>
-        <?= Html::endTag('div') ?>
-        <?= Html::beginTag('div', ['class' => 'box-body']) ?>
-        <?= Html::tag('h4', $task->name, []) ?>
-        <?= Html::tag('p', $task->description, []) ?>
-        <?= Html::beginTag('p', []) ?>
-        <?= Html::tag('i',
-            Yii::t('app', 'from') . ','
-            . $task->start
-            , []) ?>
-        <br>
-        <?= Html::tag('i',
-            Yii::t('app', 'to') . '<br>'
-            . $task->end
-            , []) ?>
-        <?= Html::endTag('p') ?>
-        <?= Html::endTag('div') ?>
-        <?= Html::endTag('div') ?>
-        <?= Html::endTag('div') ?>
+    <?php foreach ($tasks as $task) : ?>
+        <?= $this->render('task_view', [
+            'task' => $task
+        ]) ?>
     <?php endforeach ?>
     <?= Html::endTag('div') ?>
 <?php endif ?>

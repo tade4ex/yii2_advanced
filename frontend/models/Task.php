@@ -17,6 +17,7 @@ use Yii;
  * @property int $user_id
  * @property string $created_at
  * @property string $updated_at
+ * @property boolean $complete
  */
 class Task extends \yii\db\ActiveRecord
 {
@@ -36,7 +37,7 @@ class Task extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'start', 'end'], 'required'],
+            [['name', 'start', 'end', 'complete'], 'required'],
             [['description'], 'string'],
             [['name'], 'string', 'max' => 255],
         ];
@@ -72,6 +73,7 @@ class Task extends \yii\db\ActiveRecord
             $this->user_id = Yii::$app->user->id;
             $this->created_at = date('Y-m-d H:i:s');
             $this->updated_at = date('Y-m-d H:i:s');
+            $this->complete = false;
         } else {
             $this->updated_at = date('Y-m-d H:i:s');
         }
