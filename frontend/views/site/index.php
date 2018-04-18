@@ -1,8 +1,9 @@
 <?php
 
 /* @var $this yii\web\View */
-
 /* @var $projects array */
+
+/* @var $last5tasks array */
 
 use yii\helpers\Html;
 use yii\widgets\Pjax;
@@ -32,9 +33,8 @@ $(document).ready(function() {
 <?php Pjax::end() ?>
 <?php Modal::end() ?>
 
-
 <?= Html::beginTag('div', ['class' => 'content']) ?>
-    <!-- header -->
+<!-- header -->
 <?= Html::beginTag('div', ['class' => 'row']) ?>
 <?= Html::beginTag('div', ['class' => 'col-md-12']) ?>
 <?= Html::tag('p',
@@ -43,7 +43,7 @@ $(document).ready(function() {
 ) ?>
 <?= Html::endTag('div') ?>
 <?= Html::endTag('div') ?>
-    <!-- projects -->
+<!-- projects -->
 <?= Html::beginTag('div', ['class' => 'row']) ?>
 <?php foreach ($projects as $project) : ?>
     <?= $this->render('//project/_view_project', [
@@ -51,4 +51,18 @@ $(document).ready(function() {
     ]) ?>
 <?php endforeach; ?>
 <?= Html::endTag('div') ?>
+<?php if (count($last5tasks) > 0) : ?>
+    <?= Html::beginTag('div', ['class' => 'row']) ?>
+    <?= Html::beginTag('div', ['class' => 'col-md-12']) ?>
+    <?= Html::tag('h3', Yii::t('app', 'Last watch tasks'), []) ?>
+    <?= Html::endTag('div') ?>
+    <?= Html::endTag('div') ?>
+    <?= Html::beginTag('div', ['class' => 'row']) ?>
+    <?php foreach ($last5tasks as $task) : ?>
+        <?= $this->render('//task/_view_task', [
+            'task' => $task
+        ]) ?>
+    <?php endforeach; ?>
+    <?= Html::endTag('div') ?>
+<?php endif ?>
 <?= Html::endTag('div') ?>

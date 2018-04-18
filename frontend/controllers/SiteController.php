@@ -2,8 +2,11 @@
 namespace frontend\controllers;
 
 use app\models\Project;
+use app\models\Task;
+use common\helpers\LastTask;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\Url;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -73,9 +76,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $last5tasksIds = LastTask::getIds();
+        $last5tasks = [];
+        foreach ($last5tasksIds as $id) {
+            $last5tasks[] = Task::findOne(['id' => $id]);
+        }
         $projects = Project::findAll(['user_id' => Yii::$app->user->id]);
         return $this->render('index', [
             'projects' => $projects,
+            'last5tasks' => $last5tasks,
         ]);
     }
 

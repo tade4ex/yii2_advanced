@@ -23,10 +23,10 @@ class TaskController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['calendar_create', 'complete', 'create', 'delete', 'update'],
+                'only' => ['calendar_create', 'complete', 'create', 'delete', 'update', 'view'],
                 'rules' => [
                     [
-                        'actions' => ['calendar_create', 'complete', 'create', 'delete', 'update'],
+                        'actions' => ['calendar_create', 'complete', 'create', 'delete', 'update', 'view'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],

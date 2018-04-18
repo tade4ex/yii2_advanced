@@ -372,3 +372,14 @@ Previous exception:
 yii\web\UnauthorizedHttpException: Your request was made with invalid credentials. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:93
 Stack trace:
 #0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(76): yii\filters\auth\AuthMethod->handleFailure(Obje" while reading upstream, client: 127.0.0.1, server: api.test, request: "GET /project HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "api.test"
+2018/04/18 21:52:20 [error] 588#588: *1 upstream prematurely closed connection while reading response header from upstream, client: 127.0.0.1, server: advanced.test, request: "GET /task/view?id=5 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test"
+2018/04/18 22:06:48 [error] 588#588: *76 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/SiteController.php on line 84. in /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /mnt/e/PHP Storm Projects/GU/yii2-advanced/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /mnt/e/PHP Storm Projects/GU/yii2-advanced/frontend/controllers/SiteController.php on li" while reading upstream, client: 127.0.0.1, server: advanced.test, request: "GET /site/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "advanced.test", referrer: "http://advanced.test/task/view?id=4"
