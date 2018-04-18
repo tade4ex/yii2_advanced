@@ -117,4 +117,10 @@ class Project extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Task::className(), ['project_id' => 'id']);
     }
+
+    public function beforeDelete()
+    {
+        Task::deleteAll('project_id = :project_id', [':project_id' => $this->id]);
+        return parent::beforeDelete();
+    }
 }

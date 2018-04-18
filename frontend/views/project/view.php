@@ -85,7 +85,7 @@ $(document).ready(function() {
     <?= Html::beginTag('div', ['class' => 'panel-body']) ?>
     <?= Html::beginTag('div', ['class' => 'row']) ?>
     <?php foreach ($childProjects as $project) : ?>
-        <?= $this->render('view_project', [
+        <?= $this->render('_view_project', [
             'project' => $project
         ]) ?>
     <?php endforeach; ?>
@@ -102,7 +102,7 @@ $(document).ready(function() {
 <?php if (!empty($tasks)) : ?>
     <?= Html::beginTag('div', ['class' => 'row']) ?>
     <?php foreach ($tasks as $task) : ?>
-        <?= $this->render('//task/view_task', [
+        <?= $this->render('//task/_view_task', [
             'task' => $task
         ]) ?>
     <?php endforeach ?>

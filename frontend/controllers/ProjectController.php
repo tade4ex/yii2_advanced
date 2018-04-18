@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * ProjectController implements the CRUD actions for Project model.
@@ -20,11 +21,20 @@ class ProjectController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create', 'delete', 'update', 'view'],
+                'rules' => [
+                    [
+                        'actions' => ['create', 'delete', 'update', 'view'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
+                'actions' => [],
             ],
         ];
     }
@@ -109,9 +119,16 @@ class ProjectController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
 
-        return $this->redirect(['index']);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $this->findModel($id)->delete();
+            return $this->redirect(['/site/index']);
+        }
+
+        return $this->render('delete', [
+            'model' => $model,
+        ]);
     }
 
     /**

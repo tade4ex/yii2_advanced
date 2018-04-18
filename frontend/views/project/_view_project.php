@@ -15,6 +15,8 @@ use yii\helpers\Html;
 <?= Html::a(Yii::t('app', 'Show project'), ['/project/view', 'id' => $project->id], ['class' => 'btn-sm btn-success']) ?>
 <?= ' ' ?>
 <?= Html::a(Yii::t('app', 'Update project'), ['/project/update', 'id' => $project->id], ['class' => 'btn-sm btn-primary index-modal-link']) ?>
+<?= ' ' ?>
+<?= Html::a(Yii::t('app', 'Delete project'), ['/project/delete', 'id' => $project->id], ['class' => 'btn-sm btn-danger index-modal-link']) ?>
 <?= Html::endTag('div') ?>
 <?= Html::endTag('div') ?>
     <!-- project body-->

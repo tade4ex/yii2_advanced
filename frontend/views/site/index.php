@@ -46,7 +46,7 @@ $(document).ready(function() {
     <!-- projects -->
 <?= Html::beginTag('div', ['class' => 'row']) ?>
 <?php foreach ($projects as $project) : ?>
-    <?= $this->render('//project/view_project', [
+    <?= $this->render('//project/_view_project', [
         'project' => $project
     ]) ?>
 <?php endforeach; ?>

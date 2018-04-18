@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * TaskController implements the CRUD actions for Task model.
@@ -20,11 +21,20 @@ class TaskController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['calendar_create', 'complete', 'create', 'delete', 'update'],
+                'rules' => [
+                    [
+                        'actions' => ['calendar_create', 'complete', 'create', 'delete', 'update'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
+                'actions' => [],
             ],
         ];
     }
@@ -136,9 +146,16 @@ class TaskController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
 
-        return $this->redirect(['index']);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $this->findModel($id)->delete();
+            return $this->redirect(['/project/view', 'id' => $model->project_id]);
+        }
+
+        return $this->render('delete', [
+            'model' => $model,
+        ]);
     }
 
     public function actionComplete($id)

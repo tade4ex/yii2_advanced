@@ -2,7 +2,6 @@
 namespace frontend\controllers;
 
 use app\models\Project;
-use frontend\assets\PjaxDemoAsset;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
@@ -14,7 +13,6 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use yii\web\View;
 
 /**
  * Site controller
