@@ -13,14 +13,10 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Tasks'), 'url' => ['
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
-<?php Pjax::begin([
-    'id' => 'pjax-modal-container',
+
+<?php Pjax::begin(['id' => 'pjax-modal-container',]) ?>
+<?= Html::tag('h1', Html::encode($this->title), []) ?>
+<?= $this->render('_form', [
+    'model' => $model,
 ]) ?>
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
 <?php Pjax::end() ?>

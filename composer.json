@@ -22,7 +22,8 @@
         "kartik-v/yii2-widget-datetimepicker": "*",
         "inpassor/yii2-realplexor": "^0.1.4",
         "onmotion/yii2-telegram": "^0.8.5",
-        "sonko-dmitry/yii2-telegram-bot-api": "*"
+        "sonko-dmitry/yii2-telegram-bot-api": "*",
+        "philippfrenzel/yii2fullcalendar": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

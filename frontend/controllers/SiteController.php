@@ -154,9 +154,12 @@ class SiteController extends Controller
         }
     }
 
-    public function actionHelloWorld()
+    /**
+     * @return string
+     */
+    public function actionCalendar()
     {
-        return $this->render('hello-world');
+        return $this->render('calendar');
     }
 
     /**

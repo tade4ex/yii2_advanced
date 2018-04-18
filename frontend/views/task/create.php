@@ -10,14 +10,9 @@ $this->title = Yii::t('app', 'Create Task');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Tasks'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?php Pjax::begin([
-    'id' => 'pjax-modal-container',
+<?php Pjax::begin(['id' => 'pjax-modal-container',]) ?>
+<?= Html::tag('h1', Html::encode($this->title), []) ?>
+<?= $this->render('_form', [
+    'model' => $model,
 ]) ?>
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
 <?php Pjax::end() ?>

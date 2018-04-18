@@ -111,6 +111,17 @@ class TaskController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionComplete($id)
+    {
+        $model = $this->findModel($id);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['/project/view', 'id' => $model->project_id]);
+        }
+        return $this->render('complete', [
+            'model' => $model,
+        ]);
+    }
+
     /**
      * Finds the Task model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
