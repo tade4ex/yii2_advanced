@@ -67,12 +67,29 @@ class TaskController extends Controller
     {
         $model = new Task();
         $model->project_id = $id;
+        $model->complete = false;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['/project/view', 'id' => $id]);
         }
 
         return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionCalendarCreate($start, $end)
+    {
+        $model = new Task();
+        $model->complete = false;
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['/site/calendar']);
+        }
+
+        $model->start = str_replace('_', ' ', $start);
+        $model->end = str_replace('_', ' ', $end);
+        return $this->render('calendar_create', [
             'model' => $model,
         ]);
     }
@@ -90,6 +107,19 @@ class TaskController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['/project/view', 'id' => $model->project_id]);
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionCalendarUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['/site/calendar']);
         }
 
         return $this->render('update', [

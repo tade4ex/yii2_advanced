@@ -11,8 +11,6 @@ use yii\helpers\ArrayHelper;
 /* @var $tasks array */
 
 $this->title = Yii::t('app', 'Project') . ': ' . $model->name;
-//$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Projects'), 'url' => ['index']];
-//$this->params['breadcrumbs'][] = $this->title;
 
 $this->registerJs("
 $(document).ready(function() {
@@ -56,6 +54,7 @@ $(document).ready(function() {
 <?= Html::beginTag('div', ['class' => 'box-body']) ?>
 <?php if (!empty($model->parent_id)) : ?>
     <?= Html::a(Yii::t('app', 'View parent project'), ['view', 'id' => $model->parent_id], ['class' => 'btn btn-success']) ?>
+    <?= ' ' ?>
 <?php endif ?>
 <?= Html::a(Yii::t('app', 'Create new task'), ['/task/create', 'id' => $model->id], ['class' => 'btn btn-primary index-modal-link']) ?>
 <?= ' ' ?>
@@ -85,23 +84,10 @@ $(document).ready(function() {
     <?= Html::beginTag('div', ['id' => 'collapseOne', 'class' => 'panel-collapse collapse', 'role' => 'tabpanel', 'aria-labelledby' => 'headingOne']) ?>
     <?= Html::beginTag('div', ['class' => 'panel-body']) ?>
     <?= Html::beginTag('div', ['class' => 'row']) ?>
-    <?php foreach ($childProjects as $project) : /* @var $project \app\models\Project */ ?>
-        <?= Html::beginTag('div', ['class' => 'col-md-3']) ?>
-        <?= Html::beginTag('div', ['class' => 'box box-success']) ?>
-        <?= Html::beginTag('div', ['class' => 'box-header with-borde']) ?>
-        <?= Html::tag('h3', $project->name, ['class' => 'box-title']) ?>
-        <?= Html::tag('div',
-            Html::a(Yii::t('app', 'Show project'), ['/project/view', 'id' => $project->id], ['class' => 'btn-sm btn-primary'])
-            , ['class' => 'box-tools pull-right']
-        ) ?>
-        <?= Html::endTag('div') ?>
-        <?= Html::beginTag('div', ['class' => 'box-body']) ?>
-        <?php if (!empty($project->description)) : ?>
-            <?= Html::tag('p', $project->description, []) ?>
-        <?php endif; ?>
-        <?= Html::endTag('div') ?>
-        <?= Html::endTag('div') ?>
-        <?= Html::endTag('div') ?>
+    <?php foreach ($childProjects as $project) : ?>
+        <?= $this->render('view_project', [
+            'project' => $project
+        ]) ?>
     <?php endforeach; ?>
     <?= Html::endTag('div') ?>
     <?= Html::endTag('div') ?>
@@ -116,7 +102,7 @@ $(document).ready(function() {
 <?php if (!empty($tasks)) : ?>
     <?= Html::beginTag('div', ['class' => 'row']) ?>
     <?php foreach ($tasks as $task) : ?>
-        <?= $this->render('task_view', [
+        <?= $this->render('//task/view_task', [
             'task' => $task
         ]) ?>
     <?php endforeach ?>

@@ -37,7 +37,7 @@ class Task extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'start', 'end', 'complete'], 'required'],
+            [['name', 'start', 'end', 'complete', 'project_id'], 'required'],
             [['description'], 'string'],
             [['name'], 'string', 'max' => 255],
         ];
@@ -50,7 +50,7 @@ class Task extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'project_id' => Yii::t('app', 'Project ID'),
+            'project_id' => Yii::t('app', 'Project'),
             'name' => Yii::t('app', 'Name'),
             'description' => Yii::t('app', 'Description'),
             'start' => Yii::t('app', 'Start'),

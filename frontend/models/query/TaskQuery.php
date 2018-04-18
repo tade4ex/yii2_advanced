@@ -31,4 +31,16 @@ class TaskQuery extends \yii\db\ActiveQuery
     {
         return parent::one($db);
     }
+
+    /**
+     * @param $start
+     * @param $end
+     * @return $this
+     */
+    public function getByStartEnd($start, $end)
+    {
+        return $this
+            ->andWhere(['>=', 'start', $start])
+            ->andWhere(['<=', 'end', $end]);
+    }
 }
