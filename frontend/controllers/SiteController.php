@@ -79,7 +79,10 @@ class SiteController extends Controller
         $last5tasksIds = LastTask::getIds();
         $last5tasks = [];
         foreach ($last5tasksIds as $id) {
-            $last5tasks[] = Task::findOne(['id' => $id]);
+            $task = Task::findOne(['id' => $id]);
+            if (!empty($task)) {
+                $last5tasks[] = $task;
+            }
         }
         $projects = Project::findAll(['user_id' => Yii::$app->user->id]);
         return $this->render('index', [
